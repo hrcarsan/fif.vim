@@ -27,8 +27,8 @@ function! s:Find(pattern)
   " make the search
   call feedkeys('/'.a:pattern."\<cr>")
 
-  let rg_command = 'silent r ! rg --line-number --heading --context 3 --color never '.
-                  \'--follow  --line-number-width 5 --no-config --encoding utf-8 -- '.shellescape(a:pattern)
+  let rg_command = 'silent r ! rg --line-number --heading --context 3 --color never -Tsvg '.
+                  \'--follow  --no-config --encoding utf-8 -- '.shellescape(a:pattern)
 
   execute rg_command
 
